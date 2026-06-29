@@ -1,0 +1,2998 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amruta Misal · Professional Portfolio</title>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <style>
+    /* ----- Global Reset & Variables ----- */
+    :root {
+      --primary: #6C3CE1;
+      --primary-light: #8B5CF6;
+      --primary-dark: #5B21B6;
+      --secondary: #EC4899;
+      --accent: #F59E0B;
+      --dark: #0F0E17;
+      --dark-light: #1A1A2E;
+      --light: #FFFFFE;
+      --gray: #A7A9BE;
+      --gradient-primary: linear-gradient(135deg, #6C3CE1 0%, #EC4899 100%);
+      --gradient-secondary: linear-gradient(135deg, #F59E0B 0%, #EC4899 100%);
+      --shadow-sm: 0 4px 20px rgba(108, 60, 225, 0.15);
+      --shadow-md: 0 8px 40px rgba(108, 60, 225, 0.2);
+      --shadow-lg: 0 20px 60px rgba(108, 60, 225, 0.25);
+      --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #F8F9FE;
+      color: #1A1A2E;
+      scroll-behavior: smooth;
+      padding-top: 80px;
+      overflow-x: hidden;
+    }
+
+    /* ----- Scrollbar Styling ----- */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #1A1A2E;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--gradient-primary);
+      border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--gradient-secondary);
+    }
+
+    section {
+      padding: 6rem 0;
+      position: relative;
+      scroll-margin-top: 80px;
+    }
+
+    .section-title {
+      text-align: center;
+      font-weight: 800;
+      font-size: 2.8rem;
+      margin-bottom: 3.5rem;
+      letter-spacing: -1px;
+      position: relative;
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 100px;
+      height: 5px;
+      background: var(--gradient-primary);
+      margin: 1rem auto 0;
+      border-radius: 10px;
+      animation: titlePulse 2s ease-in-out infinite;
+    }
+
+    @keyframes titlePulse {
+
+      0%,
+      100% {
+        width: 100px;
+        opacity: 1;
+        transform: scaleX(1);
+      }
+
+      50% {
+        width: 160px;
+        opacity: 0.7;
+        transform: scaleX(1.1);
+      }
+    }
+
+    /* ----- Navbar ----- */
+    .navbar {
+      background: rgba(15, 14, 23, 0.95) !important;
+      backdrop-filter: blur(20px) saturate(180%);
+      padding: 0.8rem 0;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+      border-bottom: 1px solid rgba(108, 60, 225, 0.1);
+    }
+
+    .navbar-brand {
+      font-weight: 800;
+      font-size: 1.8rem;
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: -0.5px;
+    }
+
+    .navbar-brand span {
+      background: var(--gradient-secondary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .navbar-dark .navbar-nav .nav-link {
+      color: rgba(255, 255, 255, 0.7);
+      font-weight: 500;
+      padding: 0.5rem 1.2rem;
+      border-radius: 50px;
+      transition: var(--transition);
+      font-size: 0.9rem;
+      position: relative;
+    }
+
+    .navbar-dark .navbar-nav .nav-link:hover,
+    .navbar-dark .navbar-nav .nav-link.active {
+      color: #fff;
+      background: rgba(108, 60, 225, 0.15);
+      transform: translateY(-2px);
+    }
+
+    .navbar-dark .navbar-nav .nav-link::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 3px;
+      background: var(--gradient-primary);
+      transition: var(--transition);
+      transform: translateX(-50%);
+      border-radius: 10px;
+    }
+
+    .navbar-dark .navbar-nav .nav-link:hover::before {
+      width: 60%;
+    }
+
+    /* ----- Hero Section ----- */
+    .home-section {
+      background: linear-gradient(135deg, #0F0E17 0%, #1A1A2E 50%, #16213E 100%);
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 4rem 0;
+      position: relative;
+      overflow: hidden;
+      scroll-margin-top: 0;
+    }
+
+    .home-section::before {
+      content: '';
+      position: absolute;
+      top: -30%;
+      right: -10%;
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(circle, rgba(108, 60, 225, 0.1) 0%, transparent 70%);
+      border-radius: 50%;
+      animation: float 8s ease-in-out infinite;
+    }
+
+    .home-section::after {
+      content: '';
+      position: absolute;
+      bottom: -20%;
+      left: -5%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(236, 72, 153, 0.08) 0%, transparent 70%);
+      border-radius: 50%;
+      animation: float 10s ease-in-out infinite reverse;
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translate(0, 0) scale(1);
+      }
+
+      50% {
+        transform: translate(-30px, 20px) scale(1.1);
+      }
+    }
+
+    .home-section .glow-text {
+      font-size: 4.5rem;
+      font-weight: 900;
+      letter-spacing: -3px;
+      line-height: 1.1;
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .home-section .sub-text {
+      color: var(--gray);
+      font-weight: 400;
+      font-size: 1.4rem;
+      margin: 0.5rem 0 1.5rem;
+    }
+
+    .home-section .bio-text {
+      color: rgba(255, 255, 255, 0.7);
+      max-width: 500px;
+      font-size: 1.1rem;
+      line-height: 1.9;
+    }
+
+    .profile-img-wrapper {
+      position: relative;
+      display: inline-block;
+      max-width: 100%;
+    }
+
+    .profile-img-wrapper::before {
+      content: '';
+      position: absolute;
+      inset: -8px;
+      border-radius: 50%;
+      padding: 4px;
+      background: var(--gradient-primary);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      animation: spin 6s linear infinite;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .profile-img {
+      width: 340px;
+      max-width: 100%;
+      height: auto;
+      border-radius: 50%;
+      position: relative;
+      z-index: 1;
+      background: #1A1A2E;
+      padding: 0.3rem;
+      animation: floatImage 4s ease-in-out infinite;
+      display: block;
+      margin: 0 auto;
+    }
+
+    @keyframes floatImage {
+
+      0%,
+      100% {
+        transform: translateY(0) scale(1);
+      }
+
+      50% {
+        transform: translateY(-15px) scale(1.02);
+      }
+    }
+
+    .profile-img:hover {
+      transform: scale(1.05) rotate(-3deg);
+    }
+
+    .btn-gradient {
+      background: var(--gradient-primary);
+      border: none;
+      padding: 0.8rem 2.5rem;
+      border-radius: 50px;
+      font-weight: 600;
+      color: white;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-gradient:hover {
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: var(--shadow-lg);
+      color: white;
+    }
+
+    .btn-gradient::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 60%);
+      opacity: 0;
+      transition: var(--transition);
+    }
+
+    .btn-gradient:hover::after {
+      opacity: 1;
+    }
+
+    .btn-outline-glow {
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      background: transparent;
+      color: white;
+      padding: 0.8rem 2.5rem;
+      border-radius: 50px;
+      font-weight: 500;
+      transition: var(--transition);
+    }
+
+    .btn-outline-glow:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: var(--primary-light);
+      transform: translateY(-3px);
+      box-shadow: 0 0 30px rgba(108, 60, 225, 0.2);
+      color: white;
+    }
+
+    /* Floating Particles */
+    .particle {
+      position: absolute;
+      border-radius: 50%;
+      background: var(--gradient-primary);
+      opacity: 0.1;
+      animation: particleFloat 20s infinite linear;
+    }
+
+    .particle:nth-child(1) {
+      width: 80px;
+      height: 80px;
+      top: 10%;
+      left: 5%;
+      animation-delay: 0s;
+    }
+
+    .particle:nth-child(2) {
+      width: 120px;
+      height: 120px;
+      bottom: 15%;
+      right: 8%;
+      animation-delay: -5s;
+    }
+
+    .particle:nth-child(3) {
+      width: 60px;
+      height: 60px;
+      top: 50%;
+      left: 3%;
+      animation-delay: -10s;
+    }
+
+    @keyframes particleFloat {
+
+      0%,
+      100% {
+        transform: translate(0, 0) scale(1);
+        opacity: 0.1;
+      }
+
+      25% {
+        transform: translate(30px, -40px) scale(1.2);
+        opacity: 0.15;
+      }
+
+      50% {
+        transform: translate(-20px, 20px) scale(0.8);
+        opacity: 0.08;
+      }
+
+      75% {
+        transform: translate(40px, 30px) scale(1.1);
+        opacity: 0.12;
+      }
+    }
+
+    /* ----- About Section ----- */
+    #about {
+      background: white;
+      border-radius: 60px 60px 0 0;
+      margin-top: -3rem;
+      padding-top: 6rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .about-image-wrapper {
+      position: relative;
+      display: inline-block;
+    }
+
+    .about-image-wrapper::before {
+      content: '';
+      position: absolute;
+      inset: -10px;
+      border-radius: 30px;
+      background: var(--gradient-primary);
+      opacity: 0.1;
+      filter: blur(20px);
+    }
+
+    .about-img {
+      border-radius: 30px;
+      position: relative;
+      z-index: 1;
+      box-shadow: var(--shadow-lg);
+      max-width: 100%;
+      height: auto;
+    }
+
+    .about-text {
+      font-size: 1.1rem;
+      line-height: 2;
+      color: #4A4A6A;
+    }
+
+    .about-text strong {
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* ----- Skills Section ----- */
+    .skills-section {
+      background: linear-gradient(180deg, #F8F9FE 0%, #EEF2FF 100%);
+    }
+
+    .skill-card {
+      background: white;
+      padding: 2.5rem 1.5rem;
+      border-radius: 24px;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      height: 100%;
+      border: 1px solid rgba(108, 60, 225, 0.05);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .skill-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--gradient-primary);
+      transform: scaleX(0);
+      transition: var(--transition);
+    }
+
+    .skill-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .skill-card:hover {
+      transform: translateY(-12px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--primary-light);
+    }
+
+    .skill-card .icon-wrapper {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 1.2rem;
+      background: linear-gradient(135deg, rgba(108, 60, 225, 0.1), rgba(236, 72, 153, 0.1));
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+    }
+
+    .skill-card:hover .icon-wrapper {
+      background: var(--gradient-primary);
+      transform: rotate(10deg) scale(1.1);
+    }
+
+    .skill-card i {
+      font-size: 2.8rem;
+      color: var(--primary);
+      transition: var(--transition);
+    }
+
+    .skill-card:hover i {
+      color: white;
+    }
+
+    .skill-card h4 {
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: var(--dark);
+    }
+
+    .skill-card p {
+      color: var(--gray);
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+
+    .skill-bar {
+      width: 100%;
+      height: 6px;
+      background: #E5E7EB;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-top: 0.5rem;
+    }
+
+    .skill-bar .progress {
+      height: 100%;
+      border-radius: 10px;
+      background: var(--gradient-primary);
+      transition: width 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      width: 0;
+    }
+
+    .skill-card:hover .progress {
+      width: var(--progress) !important;
+    }
+
+    /* ----- Education ----- */
+    #education {
+      background: white;
+    }
+
+    .education-card {
+      background: #F8F9FE;
+      padding: 2.5rem;
+      border-radius: 24px;
+      margin-bottom: 2rem;
+      border-left: 6px solid transparent;
+      border-image: var(--gradient-primary);
+      border-image-slice: 1;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .education-card::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(108, 60, 225, 0.03) 0%, transparent 70%);
+      opacity: 0;
+      transition: var(--transition);
+    }
+
+    .education-card:hover::after {
+      opacity: 1;
+    }
+
+    .education-card:hover {
+      transform: translateX(10px) scale(1.01);
+      box-shadow: var(--shadow-md);
+      background: white;
+    }
+
+    .education-card .edu-icon {
+      width: 60px;
+      height: 60px;
+      background: var(--gradient-primary);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      color: white;
+      margin-bottom: 1rem;
+    }
+
+    .education-card h3 {
+      font-weight: 800;
+      font-size: 1.5rem;
+      color: var(--dark);
+    }
+
+    .education-card h5 {
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    .education-card .badge-date {
+      display: inline-block;
+      background: var(--gradient-primary);
+      color: white;
+      padding: 0.3rem 1.5rem;
+      border-radius: 50px;
+      font-weight: 500;
+      font-size: 0.85rem;
+      margin: 0.5rem 0 0.8rem;
+    }
+
+    /* ----- Projects ----- */
+    #projects {
+      background: #F8F9FE;
+    }
+
+    .project-card {
+      background: white;
+      padding: 2.5rem 1.5rem;
+      border-radius: 24px;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      height: 100%;
+      border: 1px solid rgba(108, 60, 225, 0.05);
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--gradient-primary);
+      opacity: 0;
+      transition: var(--transition);
+    }
+
+    .project-card:hover::before {
+      opacity: 0.05;
+    }
+
+    .project-card:hover {
+      transform: translateY(-12px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--primary-light);
+    }
+
+    .project-card .icon-wrapper {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 1.2rem;
+      background: linear-gradient(135deg, rgba(108, 60, 225, 0.1), rgba(236, 72, 153, 0.1));
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+    }
+
+    .project-card:hover .icon-wrapper {
+      background: var(--gradient-primary);
+      transform: rotate(-5deg) scale(1.1);
+    }
+
+    .project-card i {
+      font-size: 2.8rem;
+      color: var(--primary);
+      transition: var(--transition);
+    }
+
+    .project-card:hover i {
+      color: white;
+    }
+
+    .project-card h4 {
+      font-weight: 700;
+      color: var(--dark);
+      position: relative;
+      z-index: 1;
+    }
+
+    .project-card p {
+      color: var(--gray);
+      position: relative;
+      z-index: 1;
+    }
+
+    .project-card .badge {
+      padding: 6px 24px;
+      border-radius: 50px;
+      font-weight: 500;
+      background: var(--gradient-primary);
+      color: white;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ----- Certifications Carousel ----- */
+    #certifications {
+      background: white;
+      padding: 6rem 0;
+      overflow: hidden;
+    }
+
+    .cert-carousel-wrapper {
+      position: relative;
+      overflow: hidden;
+      padding: 0 60px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .cert-carousel-track {
+      display: flex;
+      transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      gap: 2rem;
+    }
+
+    .cert-card {
+      flex: 0 0 calc(33.333% - 1.333rem);
+      min-width: 280px;
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      cursor: pointer;
+      border: 1px solid rgba(108, 60, 225, 0.05);
+    }
+
+    .cert-card:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--primary-light);
+    }
+
+    .cert-card .cert-image {
+      height: 200px;
+      overflow: hidden;
+      position: relative;
+      background: #F8F9FE;
+    }
+
+    .cert-card .cert-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+
+    .cert-card:hover .cert-image img {
+      transform: scale(1.08);
+    }
+
+    .cert-card .cert-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(15, 14, 23, 0.85);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: var(--transition);
+      backdrop-filter: blur(4px);
+    }
+
+    .cert-card:hover .cert-overlay {
+      opacity: 1;
+    }
+
+    .cert-card .cert-overlay i {
+      font-size: 3rem;
+      color: white;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+
+      50% {
+        transform: scale(1.2);
+        opacity: 0.7;
+      }
+    }
+
+    .cert-card .cert-body {
+      padding: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .cert-card .cert-icon {
+      width: 48px;
+      height: 48px;
+      flex-shrink: 0;
+      background: linear-gradient(135deg, rgba(108, 60, 225, 0.1), rgba(236, 72, 153, 0.1));
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      color: var(--primary);
+      transition: var(--transition);
+    }
+
+    .cert-card:hover .cert-icon {
+      background: var(--gradient-primary);
+      color: white;
+      transform: rotate(10deg) scale(1.1);
+    }
+
+    .cert-card .cert-info h5 {
+      font-weight: 700;
+      font-size: 1rem;
+      margin: 0 0 0.2rem;
+      color: var(--dark);
+    }
+
+    .cert-card .cert-info p {
+      font-size: 0.8rem;
+      color: var(--gray);
+      margin: 0;
+    }
+
+    .cert-card .cert-badge {
+      display: inline-block;
+      font-size: 0.6rem;
+      font-weight: 700;
+      background: var(--gradient-primary);
+      color: white;
+      padding: 0.15rem 0.8rem;
+      border-radius: 50px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* Carousel Controls */
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: white;
+      border: 2px solid rgba(108, 60, 225, 0.1);
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      color: var(--dark);
+      cursor: pointer;
+      transition: var(--transition);
+      z-index: 10;
+    }
+
+    .carousel-btn:hover {
+      background: var(--gradient-primary);
+      color: white;
+      border-color: transparent;
+      box-shadow: var(--shadow-md);
+      transform: translateY(-50%) scale(1.1);
+    }
+
+    .carousel-btn.prev {
+      left: 0;
+    }
+
+    .carousel-btn.next {
+      right: 0;
+    }
+
+    .carousel-dots {
+      display: flex;
+      justify-content: center;
+      gap: 0.8rem;
+      margin-top: 2.5rem;
+    }
+
+    .carousel-dots .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #D1D5DB;
+      cursor: pointer;
+      transition: var(--transition);
+      border: 2px solid transparent;
+    }
+
+    .carousel-dots .dot.active {
+      background: var(--gradient-primary);
+      border-color: var(--primary);
+      transform: scale(1.3);
+      box-shadow: 0 0 20px rgba(108, 60, 225, 0.3);
+    }
+
+    .carousel-dots .dot:hover {
+      background: var(--primary-light);
+    }
+
+    /* ----- Achievements ----- */
+    #achievements {
+      background: #F8F9FE;
+    }
+
+    .achievement-item {
+      background: white;
+      padding: 2rem;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid rgba(108, 60, 225, 0.05);
+      transition: var(--transition);
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .achievement-item::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--gradient-primary);
+      opacity: 0;
+      transition: var(--transition);
+    }
+
+    .achievement-item:hover::before {
+      opacity: 0.05;
+    }
+
+    .achievement-item:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--primary-light);
+    }
+
+    .achievement-item .icon-wrapper {
+      width: 70px;
+      height: 70px;
+      margin: 0 auto 1rem;
+      background: linear-gradient(135deg, rgba(108, 60, 225, 0.1), rgba(236, 72, 153, 0.1));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+    }
+
+    .achievement-item:hover .icon-wrapper {
+      background: var(--gradient-primary);
+      transform: scale(1.1) rotate(-5deg);
+    }
+
+    .achievement-item i {
+      font-size: 2.2rem;
+      color: var(--primary);
+      transition: var(--transition);
+    }
+
+    .achievement-item:hover i {
+      color: white;
+    }
+
+    .achievement-item h5 {
+      font-weight: 700;
+      color: var(--dark);
+      position: relative;
+      z-index: 1;
+    }
+
+    .achievement-item p {
+      color: var(--gray);
+      font-size: 0.9rem;
+      margin: 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ----- Resume Section ----- */
+    #resume {
+      background: linear-gradient(135deg, #0F0E17 0%, #1A1A2E 100%);
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #resume::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(108, 60, 225, 0.1) 0%, transparent 70%);
+      border-radius: 50%;
+      animation: float 8s ease-in-out infinite;
+    }
+
+    #resume .resume-btn {
+      background: var(--gradient-primary);
+      border: none;
+      padding: 0.9rem 3rem;
+      border-radius: 50px;
+      font-weight: 600;
+      color: white;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    #resume .resume-btn:hover {
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: var(--shadow-lg);
+      color: white;
+    }
+
+    #resume .resume-btn-outline {
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      background: transparent;
+      color: white;
+      padding: 0.9rem 2.5rem;
+      border-radius: 50px;
+      font-weight: 500;
+      transition: var(--transition);
+      text-decoration: none;
+    }
+
+    #resume .resume-btn-outline:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: var(--primary-light);
+      transform: translateY(-3px);
+      color: white;
+    }
+
+    /* ----- Contact ----- */
+    #contact {
+      background: white;
+    }
+
+    .contact-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 30px;
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+      display: flex;
+      flex-wrap: wrap;
+      border: 1px solid rgba(108, 60, 225, 0.05);
+    }
+
+    .contact-info {
+      background: linear-gradient(135deg, #0F0E17 0%, #1A1A2E 100%);
+      color: white;
+      padding: 3.5rem 3rem;
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .contact-info h2 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+    }
+
+    .contact-info h2 span {
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .contact-info .subtitle {
+      color: var(--gray);
+      font-size: 0.95rem;
+      line-height: 1.8;
+      margin-bottom: 2.5rem;
+    }
+
+    .contact-info .info-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.8rem 1rem;
+      border-radius: 12px;
+      transition: var(--transition);
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-info .info-item:hover {
+      background: rgba(255, 255, 255, 0.05);
+      transform: translateX(8px);
+    }
+
+    .contact-info .info-item .icon-box {
+      width: 44px;
+      height: 44px;
+      flex-shrink: 0;
+      background: rgba(108, 60, 225, 0.15);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      color: var(--primary-light);
+      transition: var(--transition);
+    }
+
+    .contact-info .info-item:hover .icon-box {
+      background: var(--gradient-primary);
+      color: white;
+      transform: scale(1.1);
+    }
+
+    .contact-info .info-item .details h4 {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin: 0;
+    }
+
+    .contact-info .info-item .details p {
+      color: var(--gray);
+      font-size: 0.85rem;
+      margin: 0;
+    }
+
+    .contact-info .info-item .details a {
+      color: var(--gray);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .contact-info .info-item .details a:hover {
+      color: var(--primary-light);
+    }
+
+    .contact-info .social-links {
+      display: flex;
+      gap: 0.8rem;
+      margin-top: 2.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .contact-info .social-links a {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.05);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.2rem;
+      transition: var(--transition);
+      text-decoration: none;
+    }
+
+    .contact-info .social-links a:hover {
+      background: var(--gradient-primary);
+      transform: translateY(-4px) scale(1.1);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .contact-form {
+      padding: 3.5rem 3rem;
+      flex: 1.5;
+      min-width: 350px;
+      background: white;
+    }
+
+    .contact-form h3 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--dark);
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-form .form-subtitle {
+      color: var(--gray);
+      font-size: 0.95rem;
+      margin-bottom: 2rem;
+    }
+
+    .contact-form .form-control {
+      border-radius: 14px;
+      padding: 0.9rem 1.2rem;
+      border: 2px solid #E5E7EB;
+      font-size: 0.95rem;
+      transition: var(--transition);
+      background: #FAFBFC;
+    }
+
+    .contact-form .form-control:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 4px rgba(108, 60, 225, 0.08);
+      background: white;
+      transform: scale(1.01);
+    }
+
+    .contact-form .btn-submit {
+      background: var(--gradient-primary);
+      border: none;
+      padding: 1rem;
+      border-radius: 14px;
+      font-weight: 600;
+      color: white;
+      width: 100%;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    .contact-form .btn-submit:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .captcha-box {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      background: #F8F9FE;
+      padding: 0.6rem 1.2rem;
+      border-radius: 12px;
+      border: 2px solid #E5E7EB;
+    }
+
+    .captcha-box .captcha-text {
+      font-size: 1.4rem;
+      font-weight: 800;
+      letter-spacing: 4px;
+      background: var(--dark);
+      color: var(--primary-light);
+      padding: 0.3rem 1.2rem;
+      border-radius: 8px;
+      font-family: 'Courier New', monospace;
+      user-select: none;
+    }
+
+    .captcha-box .captcha-refresh {
+      background: none;
+      border: none;
+      color: var(--primary);
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .captcha-box .captcha-refresh:hover {
+      transform: rotate(60deg) scale(1.2);
+    }
+
+    .captcha-box input {
+      flex: 1;
+      border: 2px solid #E5E7EB;
+      border-radius: 8px;
+      padding: 0.5rem 1rem;
+      font-size: 0.95rem;
+      outline: none;
+      background: white;
+    }
+
+    .captcha-box input:focus {
+      border-color: var(--primary);
+    }
+
+    .success-message {
+      display: none;
+      background: #ECFDF5;
+      border: 2px solid #34D399;
+      border-radius: 12px;
+      padding: 1rem 1.5rem;
+      margin-top: 1.5rem;
+      color: #065F46;
+      font-weight: 500;
+    }
+
+    .success-message.show {
+      display: block;
+      animation: slideDown 0.5s ease;
+    }
+
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-15px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* ----- Floating Buttons ----- */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 30px;
+      left: 30px;
+      width: 58px;
+      height: 58px;
+      background: #25D366;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      box-shadow: 0 8px 30px rgba(37, 211, 102, 0.35);
+      transition: var(--transition);
+      z-index: 999;
+      text-decoration: none;
+      animation: bounce 2s infinite;
+    }
+
+    .whatsapp-float:hover {
+      background: #1DA851;
+      transform: translateY(-6px) scale(1.1) rotate(-5deg);
+      box-shadow: 0 15px 40px rgba(37, 211, 102, 0.4);
+      color: white;
+    }
+
+    @keyframes bounce {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-8px);
+      }
+    }
+
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 52px;
+      height: 52px;
+      background: var(--gradient-primary);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      font-size: 1.4rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--shadow-sm);
+      cursor: pointer;
+      transition: var(--transition);
+      z-index: 999;
+    }
+
+    .back-to-top:hover {
+      transform: translateY(-6px) scale(1.1);
+      box-shadow: var(--shadow-lg);
+      color: white;
+    }
+
+    /* ----- Modal Customization ----- */
+    .modal-content {
+      border-radius: 28px;
+      border: none;
+      overflow: hidden;
+    }
+
+    .modal-header {
+      border-bottom: 1px solid rgba(108, 60, 225, 0.1);
+      padding: 1.2rem 1.8rem;
+    }
+
+    .modal-header .btn-close-custom {
+      background: none;
+      border: none;
+      font-size: 1.8rem;
+      line-height: 1;
+      color: var(--dark);
+      transition: var(--transition);
+    }
+
+    .modal-header .btn-close-custom:hover {
+      transform: rotate(90deg) scale(1.1);
+      color: var(--secondary);
+    }
+
+    .modal-fullscreen-cert .modal-content {
+      background: rgba(15, 14, 23, 0.95);
+      backdrop-filter: blur(20px);
+    }
+
+    .modal-fullscreen-cert .modal-header {
+      border: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 10;
+    }
+
+    .modal-fullscreen-cert .modal-header .modal-title {
+      color: white;
+      font-weight: 600;
+    }
+
+    .modal-fullscreen-cert .modal-header .btn-close-custom {
+      color: white;
+    }
+
+    .modal-fullscreen-cert .modal-body {
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-fullscreen-cert .modal-body img {
+      max-width: 90%;
+      max-height: 85vh;
+      object-fit: contain;
+      border-radius: 12px;
+      box-shadow: var(--shadow-lg);
+      animation: zoomIn 0.5s ease;
+    }
+
+    @keyframes zoomIn {
+      from {
+        transform: scale(0.8);
+        opacity: 0;
+      }
+
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    .modal-fullscreen-cert .cert-info-overlay {
+      position: absolute;
+      bottom: 100px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(10px);
+      padding: 1rem 2.5rem;
+      border-radius: 50px;
+      color: white;
+      text-align: center;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      max-width: 80%;
+    }
+
+    .modal-fullscreen-cert .cert-info-overlay h4 {
+      margin: 0;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    .modal-fullscreen-cert .cert-info-overlay small {
+      opacity: 0.7;
+    }
+
+    .project-modal-img {
+      max-width: 100%;
+      max-height: 60vh;
+      object-fit: contain;
+      border-radius: 16px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .project-modal-desc {
+      font-size: 1rem;
+      color: #4A4A6A;
+      max-width: 600px;
+      margin: 1.2rem auto 0;
+      background: #F8F9FE;
+      padding: 1rem 1.8rem;
+      border-radius: 40px;
+      border: 1px solid #E5E7EB;
+    }
+
+    /* Resume Modal */
+    #resumeModal .modal-dialog {
+      max-width: 95%;
+      height: 90vh;
+    }
+
+    #resumeModal .modal-content {
+      height: 100%;
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    #resumeModal .modal-body {
+      padding: 0;
+      height: calc(100% - 70px);
+      overflow: auto;
+      background: #fafafc;
+    }
+
+    #resumeModal .modal-footer {
+      background: #f8f9fe;
+      border-top: 1px solid rgba(108, 60, 225, 0.1);
+      padding: 0.8rem 1.5rem;
+      flex-shrink: 0;
+    }
+
+    #resumeModal .modal-footer .btn {
+      border-radius: 40px;
+      padding: 0.5rem 1.8rem;
+      font-weight: 500;
+    }
+
+    /* Resume embedded styles */
+    .resume-embedded {
+      max-width: 880px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 0;
+      box-shadow: none;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .resume-embedded .header {
+      background: linear-gradient(135deg, #0a1628 0%, #1a2a4a 40%, #2a3f6a 80%, #3a5a8a 100%);
+      color: white;
+      padding: 45px 55px 35px;
+      text-align: center;
+      position: relative;
+      border-bottom: 5px solid #d4a843;
+    }
+
+    .resume-embedded .header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #d4a843, #f5d78a, #d4a843);
+    }
+
+    .resume-embedded .header h1 {
+      font-size: 42px;
+      font-weight: 800;
+      letter-spacing: 4px;
+      margin-bottom: 8px;
+      text-shadow: 0 2px 15px rgba(212, 168, 67, 0.3);
+      background: linear-gradient(135deg, #ffffff, #f5d78a);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .resume-embedded .header .subtitle {
+      font-size: 18px;
+      font-weight: 300;
+      letter-spacing: 3px;
+      color: #f5d78a;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+      border-top: 1px solid rgba(245, 215, 138, 0.3);
+      padding-top: 12px;
+      display: inline-block;
+    }
+
+    .resume-embedded .content {
+      padding: 40px 50px 35px;
+      background: #fafafc;
+    }
+
+    .resume-embedded .section {
+      margin-bottom: 30px;
+    }
+
+    .resume-embedded .section-title {
+      font-size: 17px;
+      font-weight: 700;
+      color: #0a1628;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-bottom: 15px;
+      padding-bottom: 10px;
+      border-bottom: 3px solid #d4a843;
+      display: inline-block;
+      position: relative;
+    }
+
+    .resume-embedded .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      width: 40%;
+      height: 3px;
+      background: #0a1628;
+    }
+
+    .resume-embedded .section p {
+      color: #444;
+      line-height: 1.8;
+      font-size: 15px;
+    }
+
+    .resume-embedded .info-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .resume-embedded .info-table td {
+      padding: 9px 8px;
+      font-size: 15px;
+      color: #333;
+      border-bottom: 1px solid #e8ecf1;
+    }
+
+    .resume-embedded .info-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .resume-embedded .info-table .label {
+      font-weight: 700;
+      color: #0a1628;
+      width: 130px;
+      vertical-align: top;
+      letter-spacing: 0.5px;
+    }
+
+    .resume-embedded .info-table .value {
+      color: #555;
+    }
+
+    .resume-embedded .skill-list {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding: 0;
+    }
+
+    .resume-embedded .skill-list li {
+      background: linear-gradient(135deg, #0a1628, #1a2a4a);
+      color: #f5d78a;
+      padding: 9px 24px;
+      border-radius: 30px;
+      font-size: 14px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(10, 22, 40, 0.3);
+      border: 1px solid rgba(212, 168, 67, 0.2);
+      letter-spacing: 0.5px;
+    }
+
+    .resume-embedded .skill-list li:hover {
+      transform: translateY(-4px) scale(1.05);
+      box-shadow: 0 8px 30px rgba(212, 168, 67, 0.3);
+      background: linear-gradient(135deg, #1a2a4a, #2a3f6a);
+      border-color: #d4a843;
+    }
+
+    .resume-embedded .achievement-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .resume-embedded .achievement-list li {
+      padding: 12px 18px 12px 30px;
+      background: white;
+      border-left: 4px solid #d4a843;
+      margin-bottom: 10px;
+      border-radius: 0 6px 6px 0;
+      font-size: 14px;
+      color: #444;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+      position: relative;
+    }
+
+    .resume-embedded .achievement-list li::before {
+      content: '✦';
+      position: absolute;
+      left: 8px;
+      color: #d4a843;
+      font-size: 14px;
+    }
+
+    .resume-embedded .achievement-list li:hover {
+      transform: translateX(8px);
+      box-shadow: 0 4px 20px rgba(212, 168, 67, 0.15);
+      border-left-color: #0a1628;
+    }
+
+    .resume-embedded .project-list {
+      list-style: none;
+      padding: 0;
+      counter-reset: project-counter;
+    }
+
+    .resume-embedded .project-list li {
+      padding: 13px 18px 13px 50px;
+      background: white;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      font-weight: 500;
+      color: #0a1628;
+      border: 1px solid #e8ecf1;
+      transition: all 0.3s ease;
+      position: relative;
+      counter-increment: project-counter;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+    }
+
+    .resume-embedded .project-list li::before {
+      content: counter(project-counter);
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: linear-gradient(135deg, #0a1628, #1a2a4a);
+      color: #f5d78a;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 700;
+      border: 2px solid #d4a843;
+    }
+
+    .resume-embedded .project-list li:hover {
+      transform: translateX(8px) scale(1.01);
+      border-color: #d4a843;
+      box-shadow: 0 4px 20px rgba(212, 168, 67, 0.15);
+    }
+
+    .resume-embedded .declaration {
+      background: linear-gradient(135deg, #f8f6f0, #f0ede5);
+      padding: 20px 28px;
+      border-radius: 10px;
+      border-left: 5px solid #d4a843;
+      font-style: italic;
+      color: #444;
+      line-height: 1.7;
+      box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.04);
+      position: relative;
+    }
+
+    .resume-embedded .declaration::before {
+      content: '"';
+      font-size: 50px;
+      color: #d4a843;
+      position: absolute;
+      top: -5px;
+      left: 10px;
+      opacity: 0.3;
+      font-family: Georgia, serif;
+    }
+
+    .resume-embedded .footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      padding-top: 22px;
+      margin-top: 15px;
+      border-top: 2px solid #d4a843;
+      background: linear-gradient(to right, transparent, #f8f6f0, transparent);
+      padding: 22px 10px 0;
+    }
+
+    .resume-embedded .footer .left {
+      font-size: 15px;
+      color: #555;
+    }
+
+    .resume-embedded .footer .left strong {
+      color: #0a1628;
+      font-weight: 700;
+    }
+
+    .resume-embedded .footer .right {
+      font-size: 22px;
+      font-weight: 800;
+      color: #0a1628;
+      letter-spacing: 2px;
+      text-align: right;
+      position: relative;
+    }
+
+    .resume-embedded .footer .right::before {
+      content: '';
+      position: absolute;
+      top: -12px;
+      right: 0;
+      width: 60px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #d4a843);
+    }
+
+    .resume-embedded .footer .right span {
+      display: block;
+      font-size: 12px;
+      font-weight: 400;
+      color: #999;
+      letter-spacing: 1px;
+      margin-top: 4px;
+      font-style: italic;
+    }
+
+    @media (max-width: 768px) {
+      .resume-embedded .header {
+        padding: 30px 25px;
+      }
+
+      .resume-embedded .header h1 {
+        font-size: 30px;
+        letter-spacing: 2px;
+      }
+
+      .resume-embedded .header .subtitle {
+        font-size: 15px;
+        letter-spacing: 1px;
+      }
+
+      .resume-embedded .content {
+        padding: 25px 20px;
+      }
+
+      .resume-embedded .info-table .label {
+        width: 90px;
+        font-size: 13px;
+      }
+
+      .resume-embedded .info-table td {
+        font-size: 13px;
+        padding: 7px 4px;
+      }
+
+      .resume-embedded .skill-list li {
+        font-size: 12px;
+        padding: 7px 16px;
+      }
+
+      .resume-embedded .footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+
+      .resume-embedded .footer .right {
+        text-align: left;
+        width: 100%;
+      }
+
+      .resume-embedded .footer .right::before {
+        right: auto;
+        left: 0;
+        width: 40px;
+      }
+
+      .resume-embedded .section-title {
+        font-size: 15px;
+        letter-spacing: 2px;
+      }
+
+      .resume-embedded .project-list li {
+        padding: 11px 14px 11px 45px;
+        font-size: 14px;
+      }
+
+      .resume-embedded .project-list li::before {
+        width: 24px;
+        height: 24px;
+        font-size: 11px;
+        left: 10px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .resume-embedded .header h1 {
+        font-size: 24px;
+      }
+
+      .resume-embedded .header .subtitle {
+        font-size: 13px;
+      }
+
+      .resume-embedded .content {
+        padding: 18px 14px;
+      }
+
+      .resume-embedded .info-table .label {
+        width: 70px;
+        font-size: 12px;
+      }
+
+      .resume-embedded .info-table td {
+        font-size: 12px;
+      }
+
+      .resume-embedded .skill-list li {
+        font-size: 11px;
+        padding: 5px 12px;
+      }
+
+      .resume-embedded .section-title {
+        font-size: 13px;
+        letter-spacing: 1px;
+      }
+    }
+
+    /* ----- Responsive ----- */
+    @media (max-width: 992px) {
+      .home-section .glow-text {
+        font-size: 3.5rem;
+      }
+
+      .cert-card {
+        flex: 0 0 calc(50% - 1rem);
+      }
+
+      .contact-container {
+        flex-direction: column;
+      }
+
+      .contact-info,
+      .contact-form {
+        padding: 2.5rem 2rem;
+      }
+
+      .profile-img {
+        width: 280px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .home-section {
+        padding: 3rem 0;
+        min-height: auto;
+      }
+
+      .home-section .glow-text {
+        font-size: 2.5rem;
+      }
+
+      .profile-img {
+        width: 200px;
+      }
+
+      .section-title {
+        font-size: 2.2rem;
+      }
+
+      .cert-card {
+        flex: 0 0 100%;
+      }
+
+      .cert-carousel-wrapper {
+        padding: 0 40px;
+      }
+
+      .carousel-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 1rem;
+      }
+
+      .whatsapp-float {
+        bottom: 20px;
+        left: 20px;
+        width: 48px;
+        height: 48px;
+        font-size: 1.6rem;
+      }
+
+      .back-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 44px;
+        height: 44px;
+        font-size: 1.2rem;
+      }
+
+      .home-section .bio-text {
+        max-width: 100%;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .home-section .glow-text {
+        font-size: 2rem;
+      }
+
+      .contact-form {
+        padding: 1.5rem;
+      }
+
+      .contact-info {
+        padding: 1.5rem;
+      }
+
+      .profile-img {
+        width: 160px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Amruta<span>Misal</span></a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#certifications">Certifications</a></li>
+          <li class="nav-item"><a class="nav-link" href="#achievements">Achievements</a></li>
+          <li class="nav-item"><a class="nav-link" href="#resume">Resume</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== HOME ===== -->
+  <section id="home" class="home-section">
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="container position-relative" style="z-index: 1;">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-6" data-aos="fade-right" data-aos-duration="1000">
+          <h4
+            style="color: var(--gray); font-weight: 400; letter-spacing: 3px; text-transform: uppercase; font-size: 0.9rem;">
+            Hello, I'm</h4>
+          <h1 class="glow-text">Amruta Misal</h1>
+          <h3 class="sub-text">Web Developer</h3>
+          <p class="bio-text">Final-year Diploma student with a strong passion for web development and modern
+            technologies. Skilled in creating responsive, user-friendly websites.</p>
+          <div class="d-flex gap-3 flex-wrap">
+            <button class="btn btn-gradient" onclick="openResumeModal()"><i class="bi bi-eye me-2"></i>Resume</button>
+            <a href="#contact" class="btn btn-outline-glow"><i class="bi bi-chat-dots me-2"></i>Contact</a>
+          </div>
+        </div>
+        <div class="col-lg-6 text-center" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+          <div class="profile-img-wrapper">
+            <img src="images/homeimage.jpg" class="profile-img" alt="Amruta Misal" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section id="about" data-aos="fade-up" data-aos-duration="800">
+    <div class="container">
+      <h2 class="section-title">About Me</h2>
+      <div class="row align-items-center g-4">
+        <div class="col-md-4 text-center" data-aos="fade-right" data-aos-duration="800">
+          <div class="about-image-wrapper">
+            <img src="images/aboutimage.jpg" class="about-img img-fluid" alt="about" style="max-width: 220px;" />
+          </div>
+        </div>
+        <div class="col-md-8" data-aos="fade-left" data-aos-duration="800" data-aos-delay="200">
+          <p class="about-text">
+            I am a dedicated and enthusiastic final-year Diploma student with a strong passion for <strong>web
+              development</strong> and technology. I possess foundational knowledge of <strong>HTML, CSS, JavaScript,
+              and Bootstrap</strong>, which I use to design and develop responsive, user-friendly websites. Throughout
+            my academic journey, I have focused on enhancing my technical skills through practical projects and
+            continuous learning. I am committed to building innovative digital solutions and expanding my expertise in
+            modern web technologies. With a strong willingness to learn and adapt, I aim to contribute effectively to
+            the IT industry while pursuing opportunities for professional growth and career advancement.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SKILLS ===== -->
+  <section id="skills" class="skills-section" data-aos="fade-up" data-aos-duration="800">
+    <div class="container">
+      <h2 class="section-title">My Skills</h2>
+      <div class="row g-4">
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="skill-card">
+            <div class="icon-wrapper"><i class="bi bi-filetype-html"></i></div>
+            <h4>HTML5</h4>
+            <p>Semantic, accessible markup</p>
+            <div class="skill-bar">
+              <div class="progress" style="--progress: 97%; width: 97%;"></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="skill-card">
+            <div class="icon-wrapper"><i class="bi bi-filetype-css"></i></div>
+            <h4>CSS</h4>
+            <p>Responsive, modern UI design</p>
+            <div class="skill-bar">
+              <div class="progress" style="--progress: 95%; width: 95%;"></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+          <div class="skill-card">
+            <div class="icon-wrapper"><i class="bi bi-filetype-js"></i></div>
+            <h4>JavaScript</h4>
+            <p>Interactive, dynamic experiences</p>
+            <div class="skill-bar">
+              <div class="progress" style="--progress: 87%; width: 87%;"></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
+          <div class="skill-card">
+            <div class="icon-wrapper"><i class="bi bi-bootstrap"></i></div>
+            <h4>Bootstrap</h4>
+            <p>Mobile-first, responsive layouts</p>
+            <div class="skill-bar">
+              <div class="progress" style="--progress: 90%; width: 90%;"></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="500">
+          <div class="skill-card">
+            <div class="icon-wrapper"><i class="bi bi-database"></i></div>
+            <h4>MySQL</h4>
+            <p>Relational database management</p>
+            <div class="skill-bar">
+              <div class="progress" style="--progress: 85%; width: 85%;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EDUCATION ===== -->
+  <section id="education" data-aos="fade-up" data-aos-duration="800">
+    <div class="container">
+      <h2 class="section-title">Education</h2>
+      <div class="education-card" data-aos="fade-left" data-aos-duration="800" data-aos-delay="200">
+        <div class="edu-icon"><i class="bi bi-book"></i></div>
+        <h3>secondary Education</h3>
+        <h5>K.V.D.S. Vidyalay, Chinake</h5>
+        <span class="badge-date">2023-24</span>
+        <p>Completed with <strong>91.20%</strong> marks. Built a strong academic foundation and analytical thinking
+          skills.</p>
+      </div>
+      <div class="education-card" data-aos="fade-right" data-aos-duration="800">
+        <div class="edu-icon"><i class="bi bi-mortarboard"></i></div>
+        <h3>Diploma in Computer Engineering</h3>
+        <h5>Shivaji Polytechnic College, Sangola</h5>
+        <span class="badge-date">2024 - 2026</span>
+        <p>Currently pursuing with <strong>94.94%</strong> in First Year and <strong>92.24%</strong> in Second Year.
+          Demonstrating consistent academic excellence and a deep passion for technology.</p>
+      </div>
+      
+    </div>
+  </section>
+
+  <!-- ===== PROJECTS ===== -->
+  <section id="projects" data-aos="fade-up" data-aos-duration="800">
+    <div class="container">
+      <h2 class="section-title">My Projects</h2>
+      <div class="row g-4">
+        <div class="col-md-3" data-aos="flip-up" data-aos-delay="100">
+          <div class="project-card"
+            onclick="openProjectModal('Calculator', 'A fully functional calculator built with HTML, CSS, and JavaScript. Supports basic arithmetic operations like addition, subtraction, multiplication, division, and percentage.', 'images/calculator.png')">
+            <div class="icon-wrapper"><i class="bi bi-calculator"></i></div>
+            <h4>Calculator</h4>
+            <p>Basic arithmetic operations</p>
+            <span class="badge">View</span>
+          </div>
+        </div>
+        <div class="col-md-3" data-aos="flip-up" data-aos-delay="200">
+          <div class="project-card"
+            onclick="openProjectModal('College Website', 'A responsive educational website for a college. Built with Bootstrap 5, it features course listings, department pages, and a clean modern layout.', 'images/spc.png')">
+            <div class="icon-wrapper"><i class="bi bi-globe"></i></div>
+            <h4>College Website</h4>
+            <p>Responsive educational site</p>
+            <span class="badge">View</span>
+          </div>
+        </div>
+        <div class="col-md-3" data-aos="flip-up" data-aos-delay="300">
+          <div class="project-card"
+            onclick="openProjectModal('Validation Form', 'Client-side form validation using vanilla JavaScript. Includes real-time feedback for required fields, email format, password strength, and CAPTCHA.', 'images/reg.png')">
+            <div class="icon-wrapper"><i class="bi bi-check2-square"></i></div>
+            <h4>Validation Form</h4>
+            <p>Client-side JS validation</p>
+            <span class="badge">View</span>
+          </div>
+        </div>
+        <div class="col-md-3" data-aos="flip-up" data-aos-delay="400">
+          <div class="project-card"
+            onclick="openProjectModal('Department Management', 'A department management system with structured layout. Displays department details, faculty info, and subject offerings in a clean grid.', 'images/dep.png')">
+            <div class="icon-wrapper"><i class="bi bi-diagram-3"></i></div>
+            <h4>Department</h4>
+            <p>Structured management system</p>
+            <span class="badge">View</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECT MODAL -->
+  <div class="modal fade" id="projectModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="projectModalTitle"><i class="bi bi-folder-fill me-2 text-primary"></i>Project</h5>
+          <button type="button" class="btn-close-custom" data-bs-dismiss="modal"><i class="bi bi-x-lg"></i></button>
+        </div>
+        <div class="modal-body text-center p-4">
+          <img id="projectModalImage" src="" alt="Project screenshot" class="project-modal-img" />
+          <p id="projectModalDesc" class="project-modal-desc">Project description goes here.</p>
+        </div>
+        <div class="modal-footer" style="border-top: 1px solid #E5E7EB; background: #FAFBFC;">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+            style="border-radius: 40px; padding: 0.5rem 2rem;"><i class="bi bi-x-circle me-2"></i>Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== CERTIFICATIONS (Carousel) ===== -->
+  <section id="certifications" data-aos="fade-up" data-aos-duration="800">
+    <div class="container">
+      <h2 class="section-title">Certifications</h2>
+      <div class="cert-carousel-wrapper">
+        <button class="carousel-btn prev" onclick="moveCertCarousel(-1)"><i class="bi bi-chevron-left"></i></button>
+        <div class="cert-carousel-track" id="certCarouselTrack">
+          <!-- Certificate 1 -->
+          <div class="cert-card"
+            onclick="openCertFullscreen('C Programming Workshop', 'Completed a hands-on C Programming workshop covering fundamentals, data structures, and problem-solving techniques.', 'images/c pro.jpg')">
+            <div class="cert-image">
+              <img src="images/c pro.jpg" alt="C Programming Workshop" />
+              <div class="cert-overlay"><i class="bi bi-eye"></i></div>
+            </div>
+            <div class="cert-body">
+              <div class="cert-icon"><i class="bi bi-code-square"></i></div>
+              <div class="cert-info">
+                <h5>C Programming Workshop</h5>
+                <p><i class="bi bi-calendar3"></i> 2024 · Workshop</p>
+                <span class="cert-badge">Verified</span>
+              </div>
+            </div>
+          </div>
+          <!-- Certificate 2 -->
+          <div class="cert-card"
+            onclick="openCertFullscreen('AI Gunvant Student Certificate', 'Recognized as an AI Gunvant Student for outstanding performance in Artificial Intelligence and Machine Learning concepts.', 'images/AI.jpg')">
+            <div class="cert-image">
+              <img src="images/AI.jpg" alt="AI Workshop Certificate" />
+              <div class="cert-overlay"><i class="bi bi-eye"></i></div>
+            </div>
+            <div class="cert-body">
+              <div class="cert-icon"><i class="bi bi-robot"></i></div>
+              <div class="cert-info">
+                <h5>AI Workshop</h5>
+                <p><i class="bi bi-calendar3"></i> 2025 · AI Academy</p>
+                <span class="cert-badge">Verified</span>
+              </div>
+            </div>
+          </div>
+          <!-- Certificate 3 -->
+          <div class="cert-card"
+            onclick="openCertFullscreen('Successful Student Certificate', 'Awarded for being a successful student with consistent academic performance and active participation.', 'images/succ.jpg')">
+            <div class="cert-image">
+              <img src="images/succ.jpg" alt="Successful Student Certificate" />
+              <div class="cert-overlay"><i class="bi bi-eye"></i></div>
+            </div>
+            <div class="cert-body">
+              <div class="cert-icon"><i class="bi bi-star"></i></div>
+              <div class="cert-info">
+                <h5>Successful Student</h5>
+                <p><i class="bi bi-calendar3"></i> 2024 · Academic</p>
+                <span class="cert-badge">Verified</span>
+              </div>
+            </div>
+          </div>
+          <!-- Certificate 4 -->
+          <div class="cert-card"
+            onclick="openCertFullscreen('Merit Certificate - 1st Position', 'Awarded for securing 1st position in the academic year with outstanding performance in all subjects.', 'images/1 st.jpg')">
+            <div class="cert-image">
+              <img src="images/1 st.jpg" alt="Merit Certificate 1st Position" />
+              <div class="cert-overlay"><i class="bi bi-eye"></i></div>
+            </div>
+            <div class="cert-body">
+              <div class="cert-icon"><i class="bi bi-trophy"></i></div>
+              <div class="cert-info">
+                <h5>Merit Certificate - 1st</h5>
+                <p><i class="bi bi-calendar3"></i> 2024 · Academic</p>
+                <span class="cert-badge">Verified</span>
+              </div>
+            </div>
+          </div>
+          <!-- Certificate 5 -->
+          <div class="cert-card"
+            onclick="openCertFullscreen('Academic Certificate - 3rd Position', 'Recognized for securing 3rd position in academic excellence and outstanding performance in technical subjects.', 'images/3rd.jpg')">
+            <div class="cert-image">
+              <img src="images/3rd.jpg" alt="Academic Certificate 3rd Position" />
+              <div class="cert-overlay"><i class="bi bi-eye"></i></div>
+            </div>
+            <div class="cert-body">
+              <div class="cert-icon"><i class="bi bi-award"></i></div>
+              <div class="cert-info">
+                <h5>Academic Certificate</h5>
+                <p><i class="bi bi-calendar3"></i> 2025 · Academic</p>
+                <span class="cert-badge">Verified</span>
+              </div>
+            </div>
+          </div>
+          <!-- Certificate 6 (Duplicate for seamless loop) -->
+          <div class="cert-card"
+            onclick="openCertFullscreen('C Programming Workshop', 'Completed a hands-on C Programming workshop covering fundamentals, data structures, and problem-solving techniques.', 'images/c pro.jpg')">
+            <div class="cert-image">
+              <img src="images/c pro.jpg" alt="C Programming Workshop" />
+              <div class="cert-overlay"><i class="bi bi-eye"></i></div>
+            </div>
+            <div class="cert-body">
+              <div class="cert-icon"><i class="bi bi-code-square"></i></div>
+              <div class="cert-info">
+                <h5>C Programming Workshop</h5>
+                <p><i class="bi bi-calendar3"></i> 2024 · Workshop</p>
+                <span class="cert-badge">Verified</span>
+              </div>
+            </div>
+          </div>
+          <!-- Certificate 7 (Duplicate for seamless loop) -->
+          <div class="cert-card"
+            onclick="openCertFullscreen('AI Gunvant Student Certificate', 'Recognized as an AI Gunvant Student for outstanding performance in Artificial Intelligence and Machine Learning concepts.', 'images/AI.jpg')">
+            <div class="cert-image">
+              <img src="images/AI.jpg" alt="AI Workshop Certificate" />
+              <div class="cert-overlay"><i class="bi bi-eye"></i></div>
+            </div>
+            <div class="cert-body">
+              <div class="cert-icon"><i class="bi bi-robot"></i></div>
+              <div class="cert-info">
+                <h5>AI Workshop</h5>
+                <p><i class="bi bi-calendar3"></i> 2025 · AI Academy</p>
+                <span class="cert-badge">Verified</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-btn next" onclick="moveCertCarousel(1)"><i class="bi bi-chevron-right"></i></button>
+      </div>
+      <div class="carousel-dots" id="certDots"></div>
+    </div>
+  </section>
+
+  <!-- ===== ACHIEVEMENTS ===== -->
+  <section id="achievements" data-aos="fade-up" data-aos-duration="800">
+    <div class="container">
+      <h2 class="section-title">Achievements</h2>
+      <div class="achievement-grid"
+        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; max-width: 800px; margin: 0 auto;">
+         <div class="achievement-item" data-aos="fade-up" data-aos-delay="300"
+          onclick="openDetailModal('SSC 91.20%', 'Completed SSC with 91.20% marks, demonstrating strong foundational knowledge and analytical skills.', 'bi-star')">
+          <div class="icon-wrapper"><i class="bi bi-star"></i></div>
+          <h5>SSC 91.20%</h5>
+          <p>Outstanding performance</p>
+        </div>
+        <div class="achievement-item" data-aos="fade-up" data-aos-delay="100"
+          onclick="openDetailModal('First Year 94.94%', 'Achieved 94.94% in the First Year of Diploma in Computer Engineering. Ranked among the top performers in the department.', 'bi-trophy')">
+          <div class="icon-wrapper"><i class="bi bi-trophy"></i></div>
+          <h5>First Year 94.94%</h5>
+          <p>Top performer</p>
+        </div>
+        <div class="achievement-item" data-aos="fade-up" data-aos-delay="200"
+          onclick="openDetailModal('Second Year 92.24%', 'Maintained consistent academic excellence with 92.24% in the Second Year of Diploma.', 'bi-award')">
+          <div class="icon-wrapper"><i class="bi bi-award"></i></div>
+          <h5>Second Year 92.24%</h5>
+          <p>Academic excellence</p>
+        </div>
+       
+        <div class="achievement-item" data-aos="fade-up" data-aos-delay="400"
+          onclick="openDetailModal('Web Dev Projects', 'Successfully completed 4+ web development projects including calculator, college website, validation form, and department management system.', 'bi-code')">
+          <div class="icon-wrapper"><i class="bi bi-code"></i></div>
+          <h5>Web Dev Projects</h5>
+          <p>10+ completed</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FULL SCREEN CERTIFICATE MODAL ===== -->
+  <div class="modal fade modal-fullscreen-cert" id="certFullscreenModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="certFullscreenTitle"><i class="bi bi-certificate me-2"></i>Certificate</h5>
+          <button type="button" class="btn-close-custom" data-bs-dismiss="modal"><i class="bi bi-x-lg"></i></button>
+        </div>
+        <div class="modal-body">
+          <img id="certFullscreenImage" src="" alt="Certificate" />
+          <div class="cert-info-overlay">
+            <h4 id="certFullscreenHeading">Certificate Title</h4>
+            <small id="certFullscreenDesc">Description</small>
+          </div>
+        </div>
+        <div class="modal-footer"
+          style="border: none; position: absolute; bottom: 0; left: 0; right: 0; justify-content: center;">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+            style="background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); color: white; border-radius: 30px; padding: 10px 35px;"><i
+              class="bi bi-x-circle me-2"></i>Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== DETAIL MODAL ===== -->
+  <div class="modal fade" id="detailModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="detailModalTitle"><i class="bi bi-info-circle me-2"></i>Details</h5>
+          <button type="button" class="btn-close-custom" data-bs-dismiss="modal"><i class="bi bi-x-lg"></i></button>
+        </div>
+        <div class="modal-body text-center p-4">
+          <div style="font-size: 3.5rem; margin-bottom: 1rem;" id="detailIcon"><i class="bi bi-award"
+              style="color: var(--primary);"></i></div>
+          <h3 id="detailHeading" style="font-weight: 800;">Title</h3>
+          <p id="detailDescription" style="color: var(--gray); font-size: 1.05rem;">Description goes here.</p>
+          <div style="background: #ECFDF5; padding: 0.6rem 1.5rem; border-radius: 50px; display: inline-block;">
+            <i class="bi bi-check-circle-fill text-success me-2"></i>
+            <span id="detailMeta" style="font-weight: 500;">Verified Achievement</span>
+          </div>
+        </div>
+        <div class="modal-footer" style="border-top: 1px solid #E5E7EB;">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+            style="border-radius: 40px; padding: 0.5rem 2rem;"><i class="bi bi-x-circle me-2"></i>Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== RESUME SECTION ===== -->
+  <section id="resume" data-aos="fade-up" data-aos-duration="800">
+    <div class="container position-relative" style="z-index: 1;">
+      <h2 style="font-size: 3rem; font-weight: 900; text-align: center; color: white;">Resume</h2>
+      <p style="color: var(--gray); text-align: center; margin-bottom: 2.5rem; font-size: 1.1rem;">View my professional
+        resume</p>
+      <div class="text-center d-flex gap-3 justify-content-center flex-wrap">
+        <button class="btn resume-btn" onclick="openResumeModal()"><i class="bi bi-eye me-2"></i>Preview Resume</button>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== RESUME MODAL (embedded content) ===== -->
+  <div class="modal fade" id="resumeModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+      <div class="modal-content">
+        <div class="modal-header" style="border-bottom: 1px solid rgba(108,60,225,0.1); background: #f8f9fe;">
+          <h5 class="modal-title"><i class="bi bi-file-earmark-person me-2"></i>Resume - Amruta Misal</h5>
+          <button type="button" class="btn-close-custom" data-bs-dismiss="modal"><i class="bi bi-x-lg"></i></button>
+        </div>
+        <div class="modal-body" style="padding: 0; background: #fafafc;">
+          <div class="resume-embedded">
+            <!-- HEADER -->
+            <div class="header">
+              <h1>AMRUTA MISAL</h1>
+              <div class="subtitle">Diploma Student - Computer Engineering</div>
+            </div>
+            <!-- CONTENT -->
+            <div class="content">
+              <!-- CAREER OBJECTIVE -->
+              <div class="section">
+                <div class="section-title">Career Objective</div>
+                <p>
+                  To build a successful career in the field of Computer Engineering
+                  by utilizing my technical knowledge and skills while continuing
+                  to learn and grow.
+                </p>
+              </div>
+              <!-- PERSONAL INFORMATION -->
+              <div class="section">
+                <div class="section-title">Personal Information</div>
+                <table class="info-table">
+                  <tr>
+                    <td class="label">Name</td>
+                    <td class="value">Amruta Sharad Misal</td>
+                  </tr>
+                  <tr>
+                    <td class="label">Email</td>
+                    <td class="value">amrutamisal30@gmail.com</td>
+                  </tr>
+                  <tr>
+                    <td class="label">Mobile</td>
+                    <td class="value">9665623301</td>
+                  </tr>
+                  <tr>
+                    <td class="label">Date of Birth</td>
+                    <td class="value">15 November 2008</td>
+                  </tr>
+                  <tr>
+                    <td class="label">Address</td>
+                    <td class="value">At Post - Chinake, Tal - Sangola, Dist - Solapur</td>
+                  </tr>
+                </table>
+              </div>
+              <!-- EDUCATIONAL QUALIFICATION -->
+              <div class="section">
+                <div class="section-title">Educational Qualification</div>
+                <table class="info-table">
+                  <tr>
+                    <td class="label">Institute</td>
+                    <td class="value">Shivaji Polytechnic College Sangola</td>
+                  </tr>
+                  <tr>
+                    <td class="label">University</td>
+                    <td class="value">MSBTE, Mumbai</td>
+                  </tr>
+                  <tr>
+                    <td class="label">Year of Study</td>
+                    <td class="value">Third Year</td>
+                  </tr>
+                  <tr>
+                    <td class="label">Percentage</td>
+                    <td class="value">94.94% (First Year)</td>
+                  </tr>
+                </table>
+              </div>
+              <!-- TECHNICAL SKILLS -->
+              <div class="section">
+                <div class="section-title">Technical Skills</div>
+                <ul class="skill-list">
+                  <li>HTML</li>
+                  <li>CSS</li>
+                  <li>JavaScript (Basic)</li>
+                  <li>C Programming</li>
+                  <li>MS Office</li>
+                </ul>
+              </div>
+              <!-- ACADEMIC PROJECTS -->
+              <div class="section">
+                <div class="section-title">Academic Projects</div>
+                <ul class="project-list">
+                  <li>Student Information System (Web Project using HTML)</li>
+                  <li>Calculator using C Language</li>
+                  <li>Digital Clock using JavaScript</li>
+                </ul>
+              </div>
+              <!-- ACHIEVEMENTS -->
+              <div class="section">
+                <div class="section-title">Achievements</div>
+                <ul class="achievement-list">
+                  <li>Secured First Class with Distinction in First Year</li>
+                  <li>Completed "Introduction to Computers" online course</li>
+                  <li>Participated in State Level Technical Paper Presentation</li>
+                </ul>
+              </div>
+              <!-- DECLARATION -->
+              <div class="section">
+                <div class="section-title">Declaration</div>
+                <div class="declaration">
+                  I hereby declare that the above information is true and
+                  correct to the best of my knowledge.
+                </div>
+              </div>
+              <!-- FOOTER -->
+              <div class="footer">
+                <div class="left">
+                  <strong>Date :</strong> 02/06/2026<br>
+                  <strong>Place :</strong> Sangola
+                </div>
+                <div class="right">
+                  AMRUTA MISAL
+                  <span>✧ Signature ✧</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer"
+          style="background: #f8f9fe; border-top: 1px solid rgba(108,60,225,0.1); padding: 0.8rem 1.5rem;">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+            style="border-radius: 40px; padding: 0.5rem 2rem;"><i class="bi bi-x-circle me-2"></i>Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact" data-aos="fade-up" data-aos-duration="800">
+    <div class="container">
+      <h2 class="section-title">Contact Me</h2>
+      <div class="contact-container">
+        <div class="contact-info" data-aos="fade-right" data-aos-duration="800">
+          <h2>Get In <span>Touch</span></h2>
+          <p class="subtitle">Have a question or want to work together? I'm always open to new opportunities and
+            collaborations.</p>
+          <div class="info-item">
+            <div class="icon-box"><i class="bi bi-envelope"></i></div>
+            <div class="details">
+              <h4>Email</h4>
+              <p><a href="mailto:amrutamisal30@gmail.com">amrutamisal30@gmail.com</a></p>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="icon-box"><i class="bi bi-telephone"></i></div>
+            <div class="details">
+              <h4>Phone</h4>
+              <p><a href="tel:+919665623301">+91 96656 23301</a></p>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="icon-box"><i class="bi bi-geo-alt"></i></div>
+            <div class="details">
+              <h4>Location</h4>
+              <p>Chinake, Sangola, Solapur</p>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="icon-box"><i class="bi bi-clock"></i></div>
+            <div class="details">
+              <h4>Working Hours</h4>
+              <p>Mon - Sat: 9:00 AM - 6:00 PM</p>
+            </div>
+          </div>
+          <div class="social-links">
+            <a href="#" aria-label="GitHub"><i class="bi bi-github"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+          </div>
+        </div>
+
+        <div class="contact-form" data-aos="fade-left" data-aos-duration="800" data-aos-delay="200">
+          <h3>Send a Message</h3>
+          <p class="form-subtitle">Fill out the form and I'll get back within 24 hours.</p>
+          <form id="contactForm" onsubmit="return handleSubmit(event)">
+            <div class="mb-3">
+              <label class="form-label fw-600">Full Name <span class="text-danger">*</span></label>
+              <div class="input-group-icon position-relative">
+                <span class="position-absolute"
+                  style="left: 16px; top: 50%; transform: translateY(-50%); color: var(--gray);"><i
+                    class="bi bi-person"></i></span>
+                <input type="text" class="form-control" id="fullName" placeholder="Enter your full name"
+                  style="padding-left: 44px;" required />
+              </div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label fw-600">Email <span class="text-danger">*</span></label>
+              <div class="input-group-icon position-relative">
+                <span class="position-absolute"
+                  style="left: 16px; top: 50%; transform: translateY(-50%); color: var(--gray);"><i
+                    class="bi bi-envelope"></i></span>
+                <input type="email" class="form-control" id="email" placeholder="Enter your email"
+                  style="padding-left: 44px;" required />
+              </div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label fw-600">Subject</label>
+              <div class="input-group-icon position-relative">
+                <span class="position-absolute"
+                  style="left: 16px; top: 50%; transform: translateY(-50%); color: var(--gray);"><i
+                    class="bi bi-chat"></i></span>
+                <input type="text" class="form-control" id="subject" placeholder="Enter subject"
+                  style="padding-left: 44px;" />
+              </div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label fw-600">Message <span class="text-danger">*</span></label>
+              <div class="input-group-icon position-relative">
+                <span class="position-absolute" style="left: 16px; top: 20px; color: var(--gray);"><i
+                    class="bi bi-pencil"></i></span>
+                <textarea class="form-control" id="message" placeholder="Write your message here..." required
+                  style="padding-left: 44px; min-height: 100px;"></textarea>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label fw-600">CAPTCHA <span class="text-danger">*</span></label>
+              <div class="captcha-box">
+                <span class="captcha-text" id="captchaText">A7K2</span>
+                <button type="button" class="captcha-refresh" onclick="generateCaptcha()"><i
+                    class="bi bi-arrow-clockwise"></i></button>
+                <input type="text" id="captchaInput" placeholder="Enter CAPTCHA" required />
+              </div>
+            </div>
+
+            <button type="submit" class="btn-submit"><i class="bi bi-send"></i> Send Message</button>
+            <div class="success-message" id="successMessage"><i class="bi bi-check-circle-fill me-2"></i> Thank you!
+              Your message has been sent.</div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FLOATING BUTTONS ===== -->
+  <a href="https://wa.me/919665623301?text=Hi%20Amruta%2C%20I%20visited%20your%20portfolio%20and%20would%20like%20to%20connect."
+    target="_blank" class="whatsapp-float" aria-label="WhatsApp">
+    <i class="bi bi-whatsapp"></i>
+  </a>
+
+  <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">
+    <i class="bi bi-chevron-up"></i>
+  </button>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- AOS Animation Library -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <script>
+    // Initialize AOS
+    AOS.init({
+      once: true,
+      offset: 100,
+      duration: 800,
+      easing: 'ease-out'
+    });
+
+    // ----- Project Modal -----
+    function openProjectModal(projectName, description, imagePath) {
+      document.getElementById('projectModalTitle').innerHTML = '<i class="bi bi-folder-fill me-2 text-primary"></i> ' + projectName;
+      document.getElementById('projectModalImage').src = imagePath;
+      document.getElementById('projectModalImage').alt = projectName + ' screenshot';
+      document.getElementById('projectModalDesc').textContent = description;
+      new bootstrap.Modal(document.getElementById('projectModal'), { backdrop: 'static', keyboard: true }).show();
+    }
+
+    // ----- Resume Modal (embedded) -----
+    function openResumeModal() {
+      new bootstrap.Modal(document.getElementById('resumeModal'), { backdrop: 'static', keyboard: true }).show();
+    }
+
+    // ----- Full Screen Certificate Modal -----
+    function openCertFullscreen(title, description, imagePath) {
+      document.getElementById('certFullscreenTitle').innerHTML = '<i class="bi bi-certificate me-2"></i> ' + title;
+      document.getElementById('certFullscreenHeading').textContent = title;
+      document.getElementById('certFullscreenDesc').textContent = description;
+      document.getElementById('certFullscreenImage').src = imagePath;
+      document.getElementById('certFullscreenImage').alt = title + ' Certificate';
+      new bootstrap.Modal(document.getElementById('certFullscreenModal'), { backdrop: 'static', keyboard: true }).show();
+    }
+
+    // ----- Detail Modal -----
+    function openDetailModal(title, description, iconClass) {
+      document.getElementById('detailModalTitle').innerHTML = '<i class="bi bi-info-circle me-2"></i> ' + title;
+      document.getElementById('detailHeading').textContent = title;
+      document.getElementById('detailDescription').textContent = description;
+      document.getElementById('detailIcon').innerHTML = '<i class="bi ' + iconClass + '" style="color: var(--primary);"></i>';
+      document.getElementById('detailMeta').textContent = '📌 Achievement · Verified';
+      new bootstrap.Modal(document.getElementById('detailModal'), { backdrop: 'static', keyboard: true }).show();
+    }
+
+    // ----- Certificate Carousel -----
+    let certCurrentIndex = 0;
+    const certTrack = document.getElementById('certCarouselTrack');
+    const certCards = certTrack.querySelectorAll('.cert-card');
+    const totalCertCards = certCards.length;
+    let certCardsPerView = 3;
+    let certAutoSlideInterval;
+
+    function getCertCardsPerView() {
+      if (window.innerWidth < 768) return 1;
+      if (window.innerWidth < 1024) return 2;
+      return 3;
+    }
+
+    function updateCertCarousel() {
+      certCardsPerView = getCertCardsPerView();
+      const cardWidth = certCards[0].offsetWidth + 32;
+      const maxIndex = Math.ceil((totalCertCards - certCardsPerView) / certCardsPerView);
+
+      if (certCurrentIndex > maxIndex) certCurrentIndex = 0;
+      if (certCurrentIndex < 0) certCurrentIndex = maxIndex;
+
+      const translateX = -(certCurrentIndex * certCardsPerView * cardWidth);
+      certTrack.style.transform = `translateX(${translateX}px)`;
+
+      const dots = document.querySelectorAll('#certDots .dot');
+      dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === certCurrentIndex);
+      });
+    }
+
+    function moveCertCarousel(direction) {
+      const maxIndex = Math.ceil((totalCertCards - certCardsPerView) / certCardsPerView);
+      certCurrentIndex += direction;
+      if (certCurrentIndex > maxIndex) certCurrentIndex = 0;
+      if (certCurrentIndex < 0) certCurrentIndex = maxIndex;
+      updateCertCarousel();
+      resetCertAutoSlide();
+    }
+
+    function goToCertSlide(index) {
+      certCurrentIndex = index;
+      updateCertCarousel();
+      resetCertAutoSlide();
+    }
+
+    function resetCertAutoSlide() {
+      clearInterval(certAutoSlideInterval);
+      startCertAutoSlide();
+    }
+
+    function startCertAutoSlide() {
+      certAutoSlideInterval = setInterval(() => {
+        const maxIndex = Math.ceil((totalCertCards - certCardsPerView) / certCardsPerView);
+        certCurrentIndex = (certCurrentIndex + 1) > maxIndex ? 0 : certCurrentIndex + 1;
+        updateCertCarousel();
+      }, 4000);
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const dotsContainer = document.getElementById('certDots');
+      const totalDots = Math.ceil((totalCertCards - certCardsPerView) / certCardsPerView) + 1;
+
+      for (let i = 0; i < totalDots; i++) {
+        const dot = document.createElement('span');
+        dot.className = `dot${i === 0 ? ' active' : ''}`;
+        dot.addEventListener('click', () => goToCertSlide(i));
+        dotsContainer.appendChild(dot);
+      }
+
+      setTimeout(updateCertCarousel, 100);
+      startCertAutoSlide();
+
+      const wrapper = document.querySelector('.cert-carousel-wrapper');
+      wrapper.addEventListener('mouseenter', () => clearInterval(certAutoSlideInterval));
+      wrapper.addEventListener('mouseleave', startCertAutoSlide);
+    });
+
+    let certResizeTimer;
+    window.addEventListener('resize', function () {
+      clearTimeout(certResizeTimer);
+      certResizeTimer = setTimeout(() => {
+        const dotsContainer = document.getElementById('certDots');
+        const newCardsPerView = getCertCardsPerView();
+        const totalDots = Math.ceil((totalCertCards - newCardsPerView) / newCardsPerView) + 1;
+
+        if (dotsContainer.children.length !== totalDots) {
+          dotsContainer.innerHTML = '';
+          for (let i = 0; i < totalDots; i++) {
+            const dot = document.createElement('span');
+            dot.className = `dot${i === certCurrentIndex ? ' active' : ''}`;
+            dot.addEventListener('click', () => goToCertSlide(i));
+            dotsContainer.appendChild(dot);
+          }
+        }
+        updateCertCarousel();
+      }, 250);
+    });
+
+    // ----- CAPTCHA -----
+    function generateCaptcha() {
+      const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+      let captcha = '';
+      for (let i = 0; i < 4; i++) {
+        captcha += chars.charAt(Math.floor(Math.random() * chars.length));
+      }
+      document.getElementById('captchaText').textContent = captcha;
+    }
+    generateCaptcha();
+
+    // ----- Form Submit -----
+    function handleSubmit(event) {
+      event.preventDefault();
+
+      const captchaText = document.getElementById('captchaText').textContent;
+      const captchaInput = document.getElementById('captchaInput').value.trim();
+      if (captchaInput !== captchaText) {
+        alert('❌ Invalid CAPTCHA. Please try again.');
+        generateCaptcha();
+        document.getElementById('captchaInput').value = '';
+        document.getElementById('captchaInput').focus();
+        return false;
+      }
+
+      const name = document.getElementById('fullName').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const subject = document.getElementById('subject').value.trim() || 'No subject';
+      const message = document.getElementById('message').value.trim();
+
+      const whatsappMsg = `New Contact from Portfolio:%0A%0A👤 Name: ${name}%0A📧 Email: ${email}%0A📌 Subject: ${subject}%0A💬 Message: ${message}`;
+      const whatsappURL = `https://wa.me/919665623301?text=${whatsappMsg}`;
+      window.open(whatsappURL, '_blank');
+
+      const successMsg = document.getElementById('successMessage');
+      successMsg.classList.add('show');
+      setTimeout(() => {
+        document.getElementById('contactForm').reset();
+        successMsg.classList.remove('show');
+        generateCaptcha();
+        document.getElementById('captchaInput').value = '';
+      }, 4000);
+
+      return false;
+    }
+
+    // ===== FIXED: Navbar active link with smooth scroll offset AND auto-close on mobile =====
+    document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        // --- CLOSE NAVBAR ON MOBILE ---
+        const navbarCollapse = document.querySelector('.navbar-collapse');
+        if (navbarCollapse.classList.contains('show')) {
+          const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
+          if (bsCollapse) {
+            bsCollapse.hide();
+          } else {
+            // Fallback if instance not found
+            navbarCollapse.classList.remove('show');
+          }
+        }
+        // --- END FIX ---
+
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          const navbarHeight = 80;
+          const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+          });
+        }
+        document.querySelectorAll('.navbar-nav .nav-link').forEach(l => l.classList.remove('active'));
+        this.classList.add('active');
+      });
+    });
+
+    // Update active nav link on scroll
+    window.addEventListener('scroll', function () {
+      const sections = document.querySelectorAll('section');
+      const navbarHeight = 80;
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - navbarHeight - 10;
+        if (window.pageYOffset >= sectionTop) {
+          current = section.getAttribute('id');
+        }
+      });
+      document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + current) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>
